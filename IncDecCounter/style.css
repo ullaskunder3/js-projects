@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;600&display=swap');
+
+:root{
+    --base: #ff1744;
+    --front: #2abf77;
+    --gray1: #f0f7f8;
+    --gray2: #cfd8dc;
+    --gray3: #a7b7be;
+    --gray4: #6b7e86;
+    --gray5: #425a65;
+
+    --radius: 0.2rem;
+}
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: 'Oswald', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    height: 100vh;
+    background-color: var(--gray1);
+    color: var(--gray5);
+}
+#counter{
+    font-size: 6rem;
+}
+#button__wrapper {
+    display: flex;
+    gap: 1rem;
+}
+#button__wrapper > * {
+    border: none;
+    background-color: white;
+    box-shadow: 0px 0px 10px var(--gray2);
+    font-weight: bold;
+    font-size: 2rem;
+    border-radius: 50%;
+    color: inherit;
+    height: 4rem;
+    width: 4rem;
+    cursor: pointer;
+    outline: none;
+    transition:  background-color .25s ease-in-out, transform .05s ease-in-out;
+}
+
+#button__wrapper > *:hover{
+    background-color: var(--gray2);
+}
+#button__wrapper > *:active{
+    transform: scale(.5);
+}
+.negative{
+    color: var(--base);
+    animation: pulse 500ms ease-in-out;
+}
+.positive{
+    color:var(--front);
+    animation: pulse 500ms ease-in-out;
+}
+
+@keyframes pulse{
+    0%{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(1.2);
+    }
+    100%{
+        transform: scale(1);
+    }
+}

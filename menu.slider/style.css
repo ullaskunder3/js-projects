@@ -1,0 +1,191 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&family=Roboto:wght@300;400;500;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    list-style-type: none;
+    text-decoration: none;
+    border: none;
+}
+:root{
+    /* first Set */
+    --fSkin: #fcecdd;
+    --fLightOrange: #ffc288;
+    --fYelloishOrange: #fea82f;
+    --fBrightOrange: #ff6701;
+    /* Second set */
+    --sBrightBlue: #08d9d6;
+    --sDarkBlue: #252a34;
+    --sLightRed: #ff2e63;
+    --sLight: #FFFFFC;
+    /* --sLight: #FFFFFC; */
+    /* --sLight: #eaeaea; */
+
+    --model-duration: 1s
+}
+body{
+    font-family: 'Roboto';
+    transition: transform 1s ease;
+}
+body.show-nav{
+    transform: translateX(200px);
+}
+nav{
+    background-color: var(--sLight);
+    border-right: 2px solid red;
+    color: var(--sLight);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 100vh;
+    z-index: 100;
+    transform: translateX(-100%);
+}
+nav .logo{
+    padding: 20px 0;
+    text-align: center;
+}
+nav .logo img{
+    height: 90px;
+    width: 90px;
+    border-radius: 50%;
+}
+.about{
+    color: #252a34;
+    text-align: center;
+    font-weight: 300;
+}
+.about h4{
+    padding: 10px 0 0 0;
+    font-weight: 300;
+}
+nav ul{
+    padding: 50px 0;
+}
+nav ul li{
+    text-align: center;
+    padding: 20px 0;
+    /* border-bottom: 2px solid black; */
+}
+nav ul li:first-of-type{
+    border-top: 2px solid black;
+}
+nav ul li a{
+    color: var(--sDarkBlue);
+    padding: 20px 0;
+    font-weight: 400;
+}
+header{
+    background-color: var(--sDarkBlue);
+    color: var(--sLight);
+    font-size: 50px;
+    position: relative;
+    padding: 30px 15px;
+    text-align: center;
+}
+header p{
+    margin: 20px 0;
+}
+button:focus{
+    outline: none;
+    outline-style: none;
+}
+input{
+    padding: 8px 30px;
+    box-shadow:         inset 0 0 2.5px #36cc4f;
+}
+button, input[type='submit']{
+    background-color: var(--sBrightBlue);
+    color: var(--sLight);
+    cursor: pointer;
+    padding: 8px 30px;
+    border: 0;
+    border-radius: 5px;
+}
+.toggle{
+    background-color: rgba(44, 11, 11, 0.3);
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    padding: 10px 15px;
+}
+.toggle:active{
+    color: var(--sLightRed);
+}
+.cta-btn{
+    padding: 12px 30px;
+    font-size: 20px;
+}
+.container{
+    padding: 15px;
+    margin: 0 auto;
+    max-width: 100%;
+    width: 800px;
+}
+.modal-container{
+    background-color: rgba(4, 2, 24, 0.542);
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+.modal-container.show-modal{
+    display: block;
+}
+.modal{
+    background-color: var(--sLight);
+    border-radius: 5px;
+    box-shadow:         inset 0 0 10px #000000;
+    position: absolute;
+    overflow: hidden;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 100%;
+    width: 400px;
+    animation-name: modalopen;
+    animation-duration: var(--model-duration);
+}
+.modal-header{
+    background-color: var(--sDarkBlue);
+    color: var(--sLight);
+    padding: 15px;
+}
+.modal-header h3{
+    margin: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.342);
+}
+.modal-content{
+    padding: 20px;
+
+}
+.modal-form div{
+    margin: 15px 0;
+}
+.modal-form label{
+    display: block;
+    margin-bottom: 5px;
+}
+.modal-form .form-input{
+    padding: 8px;
+    width: 100%;
+}
+.close-btn{
+    background-color: transparent;
+    font-size: 15px;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+@keyframes modalopen {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
